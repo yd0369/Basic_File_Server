@@ -5,8 +5,8 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    image: estore-app
-    container_name: app
+    image: bfs-app-image
+    container_name: bfs_man-app
     restart: unless-stopped
     volumes: 
       - ./:/var/www
@@ -26,3 +26,21 @@ services:
       - ./config/nginx/:/etc/nginx/conf.d/
     depends_on:
       - app
+
+
+  db:
+    image: mysql:8.0.27
+    container_name: mysql_db-server
+    environment:
+      MYSQL_DATABASE: file_data
+      MYSQL_ROOT_PASSWORD: R00T@AdMiN
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+
+
+volumes:
+  dbdata:
+    driver: local
