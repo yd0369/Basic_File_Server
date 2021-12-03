@@ -32,9 +32,9 @@ services:
     image: mysql:8.0.27
     container_name: mysql_db-server
     environment:
-      MYSQL_DATABASE: file_data
+      MYSQL_DATABASE: arena_database
       MYSQL_ROOT_PASSWORD: R00T@AdMiN
-    ports:
+    ports:  
       - "3307:3306"
     volumes:
       - dbdata:/var/lib/mysql
@@ -44,3 +44,6 @@ services:
 volumes:
   dbdata:
     driver: local
+
+
+
