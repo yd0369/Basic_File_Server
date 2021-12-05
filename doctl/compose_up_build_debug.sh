@@ -1,1 +1,1 @@
-docker-compose up --build --verbose
+docker-compose up --build 
