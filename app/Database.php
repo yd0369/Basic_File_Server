@@ -17,11 +17,7 @@ class Database {
 	}
 
 	public function __call($method, $args) {
-<<<<<<< HEAD
 		call_user_func_array(array($this->pdo, $method), $args);
-=======
-		var_dump($method);
->>>>>>> d4980eb3cbec3ad4968e6772582f09a9aa618750
 	}
 }
 
