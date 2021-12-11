@@ -1,4 +1,8 @@
 <?php
 
-echo "<h1> Yash Desai </h1>"
+    include "init.php";
+    $db = Database::instance();
+    $db->prepare("select * from 'users'");
+
+
 ?>
